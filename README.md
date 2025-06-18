@@ -13,3 +13,10 @@ AssertionError: False not greater than 0 : ERROR! El valor de a no es mayor que 
 
 ======================================================================
 ```
+
+Es posible tener que 12.000...{17 ceros mas}... 01  == 12, parece que esto esta relacionado con [15. Floating-Point Arithmetic: Issues and Limitations](https://docs.python.org/3/tutorial/floatingpoint.html), hay una prueba de esto en el codigo: 
+
+```
+self.assertEqual(son_iguales(12.00000000000000001, 12), True) #esto es verdadero
+self.assertEqual(son_iguales(12.000000000001, 12), True, mensaje) #esto es Falso, por lo tanto va a tener error
+```
